@@ -19,7 +19,7 @@ queries.
  */
 export function searchHighPower(car_data, minHorsepower, minTorque) {
     
-    let horsepowerArray = car_data.filter(element => element.horsepower >= minHorsepower && element.torque > minTorque);
+    let horsepowerArray = car_data.filter(element => element.horsepower >= minHorsepower && element.torque >= minTorque);
 
     horsepowerArray.sort((a, b) => (a.horsepower > b.horsepower) ? -1 : 1);
     
@@ -38,7 +38,7 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
  *
  */
 export function searchMpg(car_data, minCity, minHighway) {
-    let highwayMpgArray = car_data.filter(element => element.highway_mpg >= minHighway && element.city_mpg > minCity);
+    let highwayMpgArray = car_data.filter(element => element.highway_mpg >= minHighway && element.city_mpg >= minCity);
 
     highwayMpgArray.sort((a, b) => (a.highway_mpg > b.highway_mpg) ? -1 : 1);
     
