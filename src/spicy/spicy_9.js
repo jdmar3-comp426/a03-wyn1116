@@ -15,6 +15,7 @@
  *                from calling the function
  */
 export const repeat = (fn, n, ...params) => {
+    text = params.toString();
     for(let i = 0; i < n; i++) {
         fn(params);
     }
@@ -31,8 +32,7 @@ export const repeatDemo = () => {
     }
 
     let func = hello;
-    let word = "Hello, world!"
-    repeat(func, 10, word);
+    repeat(func, 10, "Hello, world!");
 };
 
 
