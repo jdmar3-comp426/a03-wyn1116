@@ -17,7 +17,7 @@
 export const repeat = (fn, n, ...params) => {
     let text = params.toString();
     for(let i = 0; i < n; i++) {
-        fn(params);
+        fn(text);
     }
 };
 
