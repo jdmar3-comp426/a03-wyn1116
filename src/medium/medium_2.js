@@ -42,7 +42,7 @@ for (let i = 0; i < mpg_data.length; i++) {
 
 let avgTotalMpg = (inCityMpgSum / mpg_data.length) + (onHighwayMpgSum / mpg_data.length);
 let allYearsResults = getStatistics(allYearsNumbers);
-hybridRatio = isHybrid / notHybrid;
+let hybridRatio = isHybrid / notHybrid;
 
 export const allCarStats = {
     avgMpg: avgTotalMpg,
