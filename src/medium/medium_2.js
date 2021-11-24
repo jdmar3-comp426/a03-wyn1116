@@ -25,7 +25,8 @@ let onHighwayMpgArray = [];
 
 let allYearsNumbers = [];
 
-let notHybridArray, isHybridArray;
+let notHybridArray = [];
+let isHybridArray = [];
 
 for (let i = 0; i < mpg_data.length; i++) {
         inCityMpgArray.push(mpg_data[i]["city_mpg"]);
