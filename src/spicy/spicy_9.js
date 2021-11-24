@@ -31,7 +31,8 @@ export const repeatDemo = () => {
     }
 
     let func = hello;
-    repeat(func, 10, "Hello, world!");
+    let word = "Hello, world!"
+    repeat(func, 10, word);
 };
 
 
