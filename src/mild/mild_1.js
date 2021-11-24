@@ -68,4 +68,6 @@ export function countArray(array) {
         }
         return allElements;
     }, {});
+
+    return countedArray;
 }

@@ -6,7 +6,10 @@
  * returns: { type: 'number', value: 4 }
  */
 export function identifyVariable(variable) {
-   return 'type: ' + typeof(variable) + ' value: ' + variable;
+   return {
+      type: typeof(variable),
+      value: variable
+   };
 }
 
 
@@ -26,7 +29,10 @@ export function identifyVariable(variable) {
 export function identifyArray(array) {
    let result= [];
    array.forEach(element => {
-      result.push('type: ' + typeof(element) + ' value: ' + element);
+      result.push({
+         type: typeof(element),
+         value: element
+      });
    });
    return result;
 }
@@ -48,7 +54,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-   delete object.key;
+   delete object[key];
 }
 
 /**
@@ -69,7 +75,7 @@ export function removeKey(object, key) {
  */
 export function removeKeyNonDestructive(object, key) {
    let o = object;
-   delete o.key;
+   delete o[key];
    return o;
 }
 
