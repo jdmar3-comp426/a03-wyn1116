@@ -99,11 +99,11 @@ export const tenTimesFifty = () => {
  */
 export const everyEven = (arr, test) => {
     for (let i = 0; i < arr.length; i+=2) {
-        if (test(arr[i]) !== 1) {
-            return false;
+        if (test(arr[i]) == 1) {
+            return true;
         }
     }
-    return true;
+    return false;
 };
 
 
