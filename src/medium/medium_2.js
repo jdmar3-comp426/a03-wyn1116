@@ -49,7 +49,7 @@ let notHybridSum = notHybridArray.reduce((a, b) => a+b, 0);
 
 let inCityAvg = inCitySum / mpg_data.length;
 let onHighwayAvg = onHighwaySum / mpg_data.length;
-let hybridRatio = isHybridSum / notHybridSum;
+let hybridRatio = isHybridSum / mpg_data.length;
 
 export const allCarStats = {
     avgMpg: {
