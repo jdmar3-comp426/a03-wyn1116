@@ -22,6 +22,8 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
     let horsepowerArray = car_data.filter(element => element.horsepower >= minHorsepower && element.torque > minTorque);
 
     horsepowerArray.sort((a, b) => (a.horsepower > b.horsepower) ? 1 : -1);
+    
+    return horsepowerArray;
 }
 
 
