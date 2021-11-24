@@ -42,8 +42,8 @@ export function maxAndMin(numbers) {
     let maximum = Math.max(...numbers);
     let minimum = Math.min(...numbers);
     return {
-        min: minimum,
-        max: maximum
+        max: maximum,
+        min: minimum
     };
 
 }
@@ -67,5 +67,5 @@ export function countArray(array) {
             allElements[element] = 1;
         }
         return allElements;
-    });
+    }, {});
 }
