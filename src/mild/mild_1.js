@@ -39,11 +39,13 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
-    let max = 'max, ';
-    let min = 'min, ';
-    max = max + Math.max(...numbers);
-    min = min + Math.min(...numbers);
-    return [max, min];
+    let maximum = Math.max(...numbers);
+    let minimum = Math.min(...numbers);
+    return {
+        min: minimum,
+        max: maximum
+    };
+
 }
 
 /**
@@ -57,7 +59,7 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    let countedArray = countArray.reduce(function (allElements, element) {
+    let countedArray = array.reduce(function (allElements, element) {
         if (element in allElements) {
             allElements[element]++;
         }
@@ -65,5 +67,5 @@ export function countArray(array) {
             allElements[element] = 1;
         }
         return allElements;
-    }, {});
+    });
 }
