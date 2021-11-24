@@ -1,5 +1,6 @@
 import mpg_data from "./data/mpg_data.js";
 import {getStatistics} from "./medium_1.js";
+import {removeKeys} from "./mild_2.js";
 
 /*
 This section can be done by using the array prototype functions.
@@ -19,10 +20,35 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
+
+let inCityMpgSum;
+let onHighwayMpgSum;
+
+let allYearsNumbers = [];
+
+let notHybrid, isHybrid;
+
+for (let i = 0; i < mpg_data.length; i++) {
+        inCityMpgSum = inCityMpgSum + mpg_data[i]["city_mpg"];
+        onHighwayMpgSum = onHighwayMpgSum + mpg_data[i]["highway_mpg"];
+        
+        allYearsNumbers.push(mpg_data[i]["year"]);
+
+        if (mpg_data[i]["hybrid"]) {
+            isHybrid++;
+        } else {
+            notHybrid++;
+        }
+}
+
+let avgTotalMpg = (inCityMpgSum / mpg_data.length) + (onHighwayMpgSum / mpg_data.length);
+let allYearsResults = getStatistics(allYearsNumbers);
+hybridRatio = isHybrid / notHybrid;
+
 export const allCarStats = {
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
+    avgMpg: avgTotalMpg,
+    allYearStats: allYearsResults,
+    ratioHybrids: hybridRatio,
 };
 
 
