@@ -22,7 +22,7 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
     let horsepowerArray = [];
 
     for (let i = 0; i < car_data.length; i++) {
-        if (car_data[i]["horsepower"] >= minHorsepower && car_data[i]["torque"] >= minTorque) {
+        if (car_data[i].horsepower >= minHorsepower && car_data[i].torque >= minTorque) {
             horsepowerArray.push(car_data[i]);
         }
     }
