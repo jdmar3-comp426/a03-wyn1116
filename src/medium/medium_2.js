@@ -19,10 +19,45 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
+
+let inCityMpgArray = [];
+let onHighwayMpgArray = [];
+
+let allYearsNumbers = [];
+
+let notHybridArray = [];
+let isHybridArray = [];
+
+for (let i = 0; i < mpg_data.length; i++) {
+        inCityMpgArray.push(mpg_data[i]["city_mpg"]);
+        onHighwayMpgArray.push(mpg_data[i]["highway_mpg"]);
+        
+        allYearsNumbers.push(mpg_data[i]["year"]);
+
+        if (mpg_data[i]["hybrid"]) {
+            isHybridArray.push(1);
+        } else {
+            notHybridArray.push(1);
+        }
+}
+
+let inCitySum = inCityMpgArray.reduce((a, b) => a+b, 0);
+let onHighwaySum = onHighwayMpgArray.reduce((a, b) => a+b, 0);
+let allYearsResults = getStatistics(allYearsNumbers);
+let isHybridSum = isHybridArray.reduce((a, b) => a+b, 0);
+let notHybridSum = notHybridArray.reduce((a, b) => a+b, 0);
+
+let inCityAvg = inCitySum / mpg_data.length;
+let onHighwayAvg = onHighwaySum / mpg_data.length;
+let hybridRatio = isHybridSum / mpg_data.length;
+
 export const allCarStats = {
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
+    avgMpg: {
+        city: inCityAvg,
+        highway: onHighwayAvg
+    },
+    allYearStats: allYearsResults,
+    ratioHybrids: hybridRatio,
 };
 
 
@@ -83,6 +118,9 @@ export const allCarStats = {
  *
  * }
  */
+
+
+
 export const moreStats = {
     makerHybrids: undefined,
     avgMpgByYearAndHybrid: undefined
